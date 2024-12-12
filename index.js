@@ -113,7 +113,15 @@
 // Ajuste la fonction qui prend en paramètre une string et qui renvoie un tableau avec toutes les rotations possibles de cette string.
 // Exemple : "Hello" => ["elloH", "lloHe", "loHel", "oHell", "Hello"]
 
-// export const getStringRotations = () => {};
+// export const getStringRotations = (str) => {
+//   const rotations = [];
+//   for (let i = 0; i < str.length; i++) {
+//     const rotation = str.slice(1) + str[0];
+//     rotations.push(rotation);
+//     str = rotation;
+//   }
+//   return rotations;
+// };
 
 // console.info("Exercice 10 : ", getStringRotations("Hello"));
 
@@ -123,17 +131,18 @@
 // Ajuste la fonction qui prend en paramètre un tableau et qui doit ajouter le nombre 1 à chaque élément du tableau.
 // Exemple : [1, 2, 3] => [2, 3, 4]
 
-// export const incrementArray = () => {}
+// export const incrementArray = (Array) => {
+//   return Array.map((num) => num + 1);
+// };
 
 // console.info("Exercice 11 : ", incrementArray([1, 2, 3]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 12
 
-// Ajuste la fonction qui prend en paramètre un tableau de string et qui doit retourner un tableau avec la longueur de chaque string.
-// Exemple : ["Hello", "World"] => [5, 5]
-
-// export const getLengths = () => {}
+// export const getLengths = (array) => {
+//   return array.map((str) => str.length);
+// };
 
 // console.info("Exercice 12 : ", getLengths(["Hello", "World"]));
 
@@ -143,9 +152,11 @@
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit retourner un tableau avec toutes les premières lettres de chaque string.
 // Exemple : ["Hello", "World"] => ["H", "W"]
 
-// export const getFirstLetters = () => {}
+export const getFirstLetters = (array) => {
+  return array.map((str) => str[0]);
+};
 
-// console.info("Exercice 13 : ", getFirstLetters(["Hello", "World"]));
+console.info("Exercice 13 : ", getFirstLetters(["Hello", "World"]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 14
