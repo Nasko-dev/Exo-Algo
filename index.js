@@ -101,9 +101,11 @@
 // Ajuste la fonction qui prend en paramètre un tableau et qui doit retourner le tableau trié par ordre croissant.
 // Exemple : [1, 3, 2] => [1, 2, 3]
 
-export const sortArray = () => {};
+// export const sortArray = (array) => {
+//   return array.sort((a, b) => a - b);
+// };
 
-console.info("Exercice 9 : ", sortArray([1, 3, 2]));
+// console.info("Exercice 9 : ", sortArray([1, 3, 2]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 10
@@ -111,9 +113,7 @@ console.info("Exercice 9 : ", sortArray([1, 3, 2]));
 // Ajuste la fonction qui prend en paramètre une string et qui renvoie un tableau avec toutes les rotations possibles de cette string.
 // Exemple : "Hello" => ["elloH", "lloHe", "loHel", "oHell", "Hello"]
 
-// export const getStringRotations = () => {
-
-// };
+// export const getStringRotations = () => {};
 
 // console.info("Exercice 10 : ", getStringRotations("Hello"));
 
