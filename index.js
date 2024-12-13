@@ -164,11 +164,11 @@
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit retourner un tableau avec toutes les dernières lettres de chaque string.
 // Exemple : ["Hello", "World"] => ["o", "d"]
 
-export const getLastLetters = (array) => {
-  return array.map((str) => str[4]);
-};
+// export const getLastLetters = (array) => {
+//   return array.map((str) => str[4]);
+// };
 
-console.info("Exercice 14 : ", getLastLetters(["Hello", "World"]));
+// console.info("Exercice 14 : ", getLastLetters(["Hello", "World"]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 15
@@ -176,13 +176,13 @@ console.info("Exercice 14 : ", getLastLetters(["Hello", "World"]));
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit renvoyer tout les string qui ont une longueur de 5 caractères ou plus.
 // Exemple : ["Hello", "World","Test", "Salut", "Yo"] => ["Hello", "World", "Salut"]
 
-// export const filterLongStrings = () => {
-
+// export const filterLongStrings = (array) => {
+//   return array.filter((word) => word.length > 4);
 // };
 
 // console.info(
-// 	"Exercice 15 : ",
-// 	filterLongStrings(["Hello", "World", "Test", "Salut", "Yo"]),
+//   "Exercice 15 : ",
+//   filterLongStrings(["Hello", "World", "Test", "Salut", "Yo"])
 // );
 
 //----------------------------------------------------------------------------------------------//
@@ -191,7 +191,9 @@ console.info("Exercice 14 : ", getLastLetters(["Hello", "World"]));
 // Ajuste la fonction qui prend une chaîne de caractères en format snake_case et doit retourner une nouvelle chaîne de caractères contenant les mêmes mots, mais sans les underscores.
 // Exemple : "Bonjour_c'est_papy" => "bonjour c'est papy"
 
-// export const snake_case = () => {}
+// export const snake_case = (array) => {
+//   return array.replace(/_/g, " ").toLowerCase();
+// };
 
 // console.info("Exercice 16 : ", snake_case("Bonjour_c'est_papy"));
 
@@ -201,11 +203,13 @@ console.info("Exercice 14 : ", getLastLetters(["Hello", "World"]));
 // Ajuste la fonction qui prend en deux paramètres qui sont deux tableaux de string et qui doit retourner un tableau avec tout les éléments des deux tableaux.
 // Exemple : ["Hello", "World"] et ["Test", "Salut"] => ["Hello", "World", "Test", "Salut"]
 
-// export const mergeArrays = () => {}
+// export const mergeArrays = (arr1, arr2) => {
+//   return [...arr1, ...arr2];
+// };
 
 // console.info(
-// 	"Exercice 17 : ",
-// 	mergeArrays(["Hello", "World"], ["Test", "Example"]),
+//   "Exercice 17 : ",
+//   mergeArrays(["Hello", "World"], ["Test", "Example"])
 // );
 
 //----------------------------------------------------------------------------------------------//
@@ -214,12 +218,12 @@ console.info("Exercice 14 : ", getLastLetters(["Hello", "World"]));
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit retourner toutes les strings qui ont la lettre "e".
 // Exemple : ["Poulet", "Chat", "Chien", "Cheval"] => ["Poulet", "Chien", "Cheval"].
 
-// export const filterStringsWithE = () => {
-
-// }
+// export const filterStringsWithE = (arr) => {
+//   return arr.filter((str) => str.includes("e"));
+// };
 // console.info(
-// 	"Exercice 18 : ",
-// 	filterStringsWithE(["Poulet", "Chat", "Chien", "Cheval"]),
+//   "Exercice 18 : ",
+//   filterStringsWithE(["Poulet", "Chat", "Chien", "Cheval"])
 // );
 
 //----------------------------------------------------------------------------------------------//
@@ -228,8 +232,8 @@ console.info("Exercice 14 : ", getLastLetters(["Hello", "World"]));
 // Ajuste la fonction qui prend en paramètre un tableau de nombres et qui doit retourner tous les nombres qui sont pairs par ordre croissant.
 // Exemple : [2, 9, 6, 5, 6] => [2, 6, 6].
 
-// export const filterAndSortEvenNumbers = () => {
-
+// export const filterAndSortEvenNumbers = (arr) => {
+//   return arr.filter((num) => num % 2 === 0).sort((a, b) => a - b);
 // };
 
 // console.info("Exercice 19 : ", filterAndSortEvenNumbers([2, 9, 6, 5, 6]));
@@ -242,11 +246,13 @@ console.info("Exercice 14 : ", getLastLetters(["Hello", "World"]));
 // findShort("Prachett is the best author in the world") // 2
 // findShort("The quick brown fox jumps over the lazy dog") // 3
 
-// export const findShort = () => {}
+// export const findShort = (sentence) => {
+//   return Math.min(...sentence.split(" ").map((word) => word.length));
+// };
 
 // console.info(
-// 	"Exercice 20 : ",
-// 	findShort("Prachett is the best author in the world"),
+//   "Exercice 20 : ",
+//   findShort("Prachett is the best author in the world")
 // );
 
 //----------------------------------------------------------------------------------------------//
@@ -256,7 +262,12 @@ console.info("Exercice 14 : ", getLastLetters(["Hello", "World"]));
 // Deux chaînes sont des anagrammes si elles contiennent les mêmes caractères, quel que soit l'ordre.
 // Exemple : anagram("listen", "silent") // true
 
-// export const anagram = () => {}
+// export const anagram = (str1, str2) => {
+//   if (str1.length !== str2.length) {
+//     return false;
+//   }
+//   return str1.split("").sort().join("") === str2.split("").sort().join("");
+// };
 
 // console.info("Exercice 21 : ", anagram("listen", "silent"));
 
@@ -266,7 +277,17 @@ console.info("Exercice 14 : ", getLastLetters(["Hello", "World"]));
 // Écrivez une fonction qui enlève les doubles lettres d'une chaîne donnée.
 // Exemple : removeDoubleLetters("google") // "gogle"
 
-// export const removeDoubleLetters = () => {}
+// export const removeDoubleLetters = (str) => {
+//   let result = "";
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] !== result[result.length - 1]) {
+//       result += str[i];
+//     }
+//   }
+
+//   return result;
+// };
 
 // console.info("Exercice 22 : ", removeDoubleLetters("google"));
 
