@@ -297,12 +297,16 @@
 // Écrivez une fonction qui prend un tableau de 10 entiers (entre 0 et 9) et renvoie une chaîne de caractères sous la forme d'un numéro de téléphone.
 // Exemple : createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // "(123) 456-7890"
 
-// export const createPhoneNumber = () => {
-//    };
+// export const createPhoneNumber = (numbers) => {
+//   const phoneNumber = `(${numbers.slice(0, 3).join("")}) ${numbers
+//     .slice(3, 6)
+//     .join("")}-${numbers.slice(6, 10).join("")}`;
+//   return phoneNumber;
+// };
 
 // console.info(
-// 	"Exercice 23 : ",
-// 	createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]),
+//   "Exercice 23 : ",
+//   createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
 // );
 
 //----------------------------------------------------------------------------------------------//
@@ -311,8 +315,13 @@
 // Écrivez une fonction nommée "findMissingLetter" qui prend en paramètre un tableau d'une série de lettres et qui renvoie la lettre manquante de la série.
 // Exemple : findMissingLetter(["a", "b", "c", "d", "f"]) // "e"
 
-// export const findMissingLetter = () => {
-
+// export const findMissingLetter = (letters) => {
+//   for (let i = 0; i < letters.length - 1; i++) {
+//     if (letters[i + 1].charCodeAt(0) - letters[i].charCodeAt(0) > 1) {
+//       return String.fromCharCode(letters[i].charCodeAt(0) + 1);
+//     }
+//   }
+//   return null;
 // };
 
 // console.info("Exercice 24 : ", findMissingLetter(["a", "b", "c", "d", "f"]));
@@ -323,12 +332,13 @@
 // Écrivez une fonction qui prend un tableau de string et renvoie un tableau de string triées par ordre alphabétique.
 // Exemple : sortString(["Banana", "Orange", "Apple", "Mango"]) // ["Apple", "Banana", "Mango", "Orange"]
 
-// export const sortString = () => {;
-//   };
+// export const sortString = (strings) => {
+//   return strings.sort((a, b) => a.localeCompare(b));
+// };
 
 // console.info(
-// 	"Exercice 25 : ",
-// 	sortString(["Banana", "Orange", "Apple", "Mango"]),
+//   "Exercice 25 : ",
+//   sortString(["Banana", "Orange", "Apple", "Mango"])
 // );
 
 //----------------------------------------------------------------------------------------------//
@@ -338,7 +348,9 @@
 // Exemple : otherAngle(30, 60) // 90
 // Pour trouver le troisième angle, soustrayez la somme des deux angles donnés à 180 degrés.
 
-// export const otherAngle = () => {};
+// export const otherAngle = (angle1, angle2) => {
+//   return 180 - (angle1 + angle2);
+// };
 
 // console.info("Exercice 26 : ", otherAngle(30, 60));
 
@@ -349,9 +361,9 @@
 // Une année bissextile est divisible par 4, sauf si elle est divisible par 100, à moins qu'elle ne soit également divisible par 400.
 // Exemple : isLeapYear(2020) // true
 
-// export const isLeapYear = () => {
-
-//   };
+// export const isLeapYear = (year) => {
+//   return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+// };
 
 // console.info("Exercice 27 : ", isLeapYear(2022));
 
