@@ -375,11 +375,23 @@
 // Le deuxième sous-tableau doit inclure les noms des animaux sauvages.
 // Exemple : sortAnimals(animals) // [["Cat", "Dog"], ["Eagle", "Monkey"]]
 
-// export const sortAnimals = () => {
+// export const sortAnimals = (animals) => {
+//   const domesticAnimals = ["Cat", "Dog", "Cow", "Sheep", "Rabbit"];
+//   const domestic = [];
+//   const wild = [];
 
-//   };
+//   animals.forEach((animal) => {
+//     if (domesticAnimals.includes(animal)) {
+//       domestic.push(animal);
+//     } else {
+//       wild.push(animal);
+//     }
+//   });
 
-//  console.info("Exercice 28 : ", sortAnimals(["Cat", "Dog", "Eagle", "Monkey"]));
+//   return [domestic, wild];
+// };
+
+// console.info("Exercice 28 : ", sortAnimals(["Cat", "Dog", "Eagle", "Monkey"]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 29
@@ -388,34 +400,55 @@
 // Exemple : Si on appelle decodeMessage("XUBBE MEHBT"), la fonction doit renvoyer "HELLO WORLD".
 // https://fr.wikipedia.org/wiki/Chiffrement_par_décalage
 
-// export const decodeMessage = () => {
-
+// export const decodeMessage = (message) => {
+//   return message
+//     .split("")
+//     .map((char) => {
+//       if (char >= "A" && char <= "Z") {
+//         const newChar = String.fromCharCode(
+//           ((char.charCodeAt(0) - 65 - 16 + 26) % 26) + 65
+//         );
+//         return newChar;
+//       }
+//       return char;
+//     })
+//     .join("");
 // };
+
 // console.info("Exercice 29 :", decodeMessage("XUBBE MEHBT"));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 30
+export const calculateScore = (matches) => {
+  let totalScore = 0;
 
-// Ajuste la fonction qui renverra notre score à partir des résultats des matchs.
-// Exemple : calculateScore(["1:0", "2:0", "3:0", "4:4", "2:2", "3:3", "1:4", "2:3", "2:4", "3:3"]) // 13
-// Utilisez une boucle pour parcourir le tableau et une condition pour déterminer les points à ajouter.
+  matches.forEach((match) => {
+    const [score1, score2] = match.split(":").map(Number);
 
-// export const calculateScore = () => {
+    if (score1 > score2) {
+      totalScore += 3;
+    } else if (score1 < score2) {
+      totalScore += 0;
+    } else {
+      totalScore += 1;
+    }
+  });
 
-// };
+  return totalScore;
+};
 
-// console.info(
-// 	"Exercice 30 : ",
-// 	calculateScore([
-// 		"1:0",
-// 		"2:0",
-// 		"3:0",
-// 		"4:4",
-// 		"2:2",
-// 		"3:3",
-// 		"1:4",
-// 		"2:3",
-// 		"2:4",
-// 		"3:3",
-// 	]),
-// );
+console.info(
+  "Exercice 30 : ",
+  calculateScore([
+    "1:0",
+    "2:0",
+    "3:0",
+    "4:4",
+    "2:2",
+    "3:3",
+    "1:4",
+    "2:3",
+    "2:4",
+    "3:3",
+  ])
+);
